@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background-color: lightblue; /* page background */
+  padding: 20px;
+}
+
+h2 {
+  color: darkblue; /* heading color */
+}
+
+input {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+
+button {
+  padding: 8px 12px;
+  font-size: 16px;
+  background-color: green; /* button background */
+  color: white; /* button text */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: darkgreen; /* button on hover */
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background-color: white;
+  padding: 10px;
+  margin: 5px 0;
+  border-left: 5px solid green;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+li:hover {
+  background-color: lightgreen;
+}
+</style>
+</head>
+<body>
+
+<h2>To-Do List</h2>
+
+<input type="text" id="taskInput" placeholder="Enter task">
+<button onclick="addTask()">Add</button>
+
+<ul id="taskList"></ul>
+
+<script>
+function addTask() {
+  let input = document.getElementById("taskInput").value;
+  if (input.trim() === "") {
+    alert("Please write a task!");
+    return;
+  }
+
+  document.getElementById("taskList").innerHTML += "<li>" + input + "</li>";
+  document.getElementById("taskInput").value = "";
+}
+</script>
+
+</body>
+</html>
